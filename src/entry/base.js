@@ -5,6 +5,7 @@ import VueRouter from 'vue-router';
 import Element from 'element-ui';
 import singleSpaVue from 'single-spa-vue';
 import routes from '../router';
+import '../../postcss.config';
 
 const baseFn = () => {
     // 默认控制台不输出vue官方打印日志
@@ -21,7 +22,7 @@ const baseFn = () => {
     Vue.use(Element);
     // appOptions抽离
     const appOptions = {
-        render: h => <div id="children1">
+        render: h => <div id="children1" class="single-spa-app1">
             <router-view></router-view>
         </div>,
         router

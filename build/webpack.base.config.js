@@ -44,10 +44,13 @@ module.exports = {
                         loader: isDevMode ? 'style-loader' : MiniCssExtractPlugin.loader 
                     },
                     'css-loader', {
-                    loader: 'postcss-loader',
-                    options: {
-                        plugins: [require('autoprefixer')]
-                    }
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: [
+                                require('autoprefixer'),
+                                require('postcss-plugin-namespace')('.single-spa-app1')
+                            ]
+                        }
                     }
                 ]
               },
@@ -62,7 +65,10 @@ module.exports = {
                     {
                         loader: 'postcss-loader',
                         options: {
-                            plugins: [require('autoprefixer')]
+                            plugins: [
+                                require('autoprefixer'),
+                                require('postcss-plugin-namespace')('.single-spa-app1')
+                            ]
                         }
                     }
                 ]

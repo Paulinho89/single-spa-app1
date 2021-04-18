@@ -1,5 +1,5 @@
 <template>
-    <div class='container-children1'>
+    <div class='container-children'>
         {{ testData }}
     </div>
 </template>
@@ -10,12 +10,15 @@ export default {
         return {
             testData: '这是子应用1'
         };
+    },
+    mounted() {
+        window.dispatchEvent(new CustomEvent('logout'));
     }
 };
 </script>
 
 <style lang="less" scoped>
-.container-children1 {
+.container-children {
     display: flex;
     justify-content: center;
     align-items: center;
